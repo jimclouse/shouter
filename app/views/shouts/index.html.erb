@@ -1,0 +1,24 @@
+<br/>
+<br/>
+<div align="center">
+  <table>
+  <tr>
+    <td align="right"><img src="http://www.mrsikhnet.com/wp-content/uploads/2008/11/megaphone.jpg" width="120"></td>
+    <td align="left">
+<%= form_for(@shout) do |form| %>
+  <%= form.text_field :body , :placeholder => "What do you have to say?" %>
+  <%= form.submit "Shout" %>
+<% end %>
+</td>
+</tr>
+</table>
+</div>
+<div align="center">
+<br/>
+<br/>
+<b>What people are saying...</b><br/><br/>
+<% @shouts.each do |s| %>
+<%= s.body %><br/>
+<% end %>
+</ul>
+</div>
