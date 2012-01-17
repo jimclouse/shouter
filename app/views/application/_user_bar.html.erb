@@ -1,0 +1,20 @@
+<table class="header_bar">
+<tr>
+  <td class="header_bar_left">[ <%= link_to "Shouter Home", root_path %> | 
+    <%= link_to "Users", users_path %>
+    <%= " | " if signed_in? %>
+    <%= link_to "My Shouts", user_path(current_user) if signed_in? %>
+
+    ] 
+    
+    
+    
+  </td>
+  <td class="header_bar_internals">
+<% if signed_in? %>
+  Welcome <%=current_user.email %> | <%= link_to "Sign Out", sign_out_path, :method => :delete %>
+<%else %>
+  [ <%= link_to "Sign Up", sign_up_path %> | <%= link_to "Sign In", sign_in_path %>]
+<% end %>
+</td></tr>
+</table>

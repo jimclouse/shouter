@@ -1,0 +1,6 @@
+<div class="middle_obj">
+<b>What <%= @user.email %> said...</b><br/><br/>
+<% @shouts.each do |s| %>
+  <%= s.body %><br/>
+<%end %>
+</div>

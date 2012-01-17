@@ -7,19 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<table class="header_bar">
-<tr><td>
-<% if signed_in? %>
-  Welcome <%=current_user.email %> | <%= link_to "Sign Out", sign_out_path %>
-<%else %>
-  [ <%= link_to "Sign Up", sign_up_path %> | <%= link_to "Sign In", sign_in_path %>]
-<% end %></td></tr>
-</table>
-<br/>
-<br/>
-<div class="page_title">SHOUTER!!!</div>
+<%= render "user_bar" %>
+<div class="page_title"><img src="http://www.mrsikhnet.com/wp-content/uploads/2008/11/megaphone.jpg" width="120" valign="middle">SHOUTER!!!</div>
 <div class="notice"><%= notice %></div>
-<%= yield %>
-
+<br/><br/>
+<div class="yield"><%= yield %></div>
 </body>
 </html>

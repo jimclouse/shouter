@@ -1,11 +1,11 @@
 Shouter::Application.routes.draw do
   root :to => "shouts#index"
   resources :shouts, :only => [:index, :create]
-  resources :users, :only => [:create, :new]
+  resources :users, :only => [:create, :new, :show, :index, :edit ]
   get "sign_up" => "users#new"
   get "sign_in" => "session#new"
   post "sign_in" => "session#create"
-  get "sign_out" => "session#destroy"
+  delete "sign_out" => "session#destroy"
   resource :dashboard, :only => [:show]
   
   # The priority is based upon order of creation:

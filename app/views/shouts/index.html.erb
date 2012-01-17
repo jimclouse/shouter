@@ -1,24 +1,21 @@
-<br/>
-<br/>
-<div align="center">
-  <table>
-  <tr>
-    <td align="right"><img src="http://www.mrsikhnet.com/wp-content/uploads/2008/11/megaphone.jpg" width="120"></td>
-    <td align="left">
+
+<div class="middle_obj">
+    <% if signed_in? %>  
 <%= form_for(@shout) do |form| %>
   <%= form.text_field :body , :placeholder => "What do you have to say?" %>
   <%= form.submit "Shout" %>
-<% end %>
-</td>
-</tr>
-</table>
+<% end 
+end %>
 </div>
-<div align="center">
 <br/>
-<br/>
+<div class="middle_obj">
 <b>What people are saying...</b><br/><br/>
-<% @shouts.each do |s| %>
-<%= s.body %><br/>
-<% end %>
-</ul>
+<% if @shout.errors.any? %>
+<% @shout.errors.full_messages.each do |message| %>
+<p><%=message %></p>
+<% end 
+end %>
+</div>
+<div class="shout_display">
+  <%= render @shouts %>
 </div>
